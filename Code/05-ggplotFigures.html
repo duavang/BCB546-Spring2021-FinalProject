@@ -192,7 +192,7 @@ pre code {
 <pre><code>## The following object is masked from &#39;package:readr&#39;:
 ## 
 ##     col_factor</code></pre>
-<pre class="r"><code>setwd(&quot;~/Desktop/BCB546_FinalProject&quot;)</code></pre>
+<pre class="r"><code>setwd(&quot;~/Desktop/BCB546-Spring2021-FinalProject/Data&quot;)</code></pre>
 <div id="update-the-setwd-directory-before-turning-in-the-project" class="section level3">
 <h3>Update the <code>setwd()</code> directory before turning in the project!</h3>
 </div>
@@ -203,12 +203,11 @@ pre code {
 <div id="figure-2f" class="section level2">
 <h2>Figure 2F</h2>
 </div>
-<div id="figure-3a" class="section level2">
-<h2>Figure 3A</h2>
-<pre class="r"><code>setwd(&quot;~/Desktop/TSAS_test_analysis&quot;)
+<div id="figure-3a-update-with-final-version" class="section level2">
+<h2>Figure 3A – <strong>UPDATE WITH FINAL VERSION</strong></h2>
+<pre class="r"><code>setwd(&quot;~/Desktop/BCB546-Spring2021-FinalProject/Data&quot;)
 
 EssGenesAll &lt;- read.delim(&quot;EssGenesAll_Merge.txt&quot;, header = TRUE, sep = &quot;\t&quot;)
-
 
 #Creating a new column to rename the groups 
 EssGenesAll &lt;- mutate(EssGenesAll, Enrichment = Library) #creating a new column identical to &quot;Library&quot; 
@@ -216,7 +215,6 @@ EssGenesAll$Enrichment[ EssGenesAll$Enrichment == &quot;Ess538&quot;] = &quot;E3
 EssGenesAll$Enrichment[ EssGenesAll$Enrichment == &quot;Ess539&quot;] = &quot;E2&quot;  #Replace Ess539 with &quot;E2&quot;
 EssGenesAll$Enrichment[ EssGenesAll$Enrichment == &quot;Ess540&quot;] = &quot;E1&quot;  #Replace Ess540 with &quot;E1&quot;
 EssGenesAll$Enrichment[ EssGenesAll$Enrichment == &quot;Ess541&quot;] = &quot;Library&quot;  #Replace Ess541 with &quot;Library&quot;
-
 EssGenesAll$TotalNumberReads.n &lt;- as.numeric(EssGenesAll$TotalNumberReads)
 
 #This command orders the 4 categories so that E3 will be first and the Library at the end
@@ -251,8 +249,9 @@ ggplot(data = EssGenesAll, aes(x=start, y=TotalNumberReads.n, color = Enrichment
 </div>
 <div id="figure-3c" class="section level2">
 <h2>Figure 3C</h2>
-<pre class="r"><code>setwd(&quot;~/Desktop/BCB546_FinalProject&quot;) 
-TableS1A &lt;- read.csv(&quot;TableS1A-edited.csv&quot;, header = TRUE)
+<pre class="r"><code>setwd(&quot;~/Desktop/BCB546-Spring2021-FinalProject/Data&quot;)
+
+TableS1A &lt;- read.csv(&quot;TableS1A.csv&quot;, header = TRUE)
 TableS1A$Category.f &lt;- as.factor(TableS1A$Category)
 TableS1A$Category.n &lt;- as.numeric(TableS1A$Category)
 

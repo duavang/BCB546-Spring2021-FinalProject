@@ -16,7 +16,7 @@ Here is a summary of the code used to plot figures in R. Make sure to set the co
 ```{r}
 library(tidyverse)
 library(scales)
-setwd("~/Desktop/BCB546_FinalProject")
+setwd("~/Desktop/BCB546-Spring2021-FinalProject/Data")
 ```
 
 ### Update the `setwd()` directory before turning in the project!
@@ -34,13 +34,12 @@ setwd("~/Desktop/BCB546_FinalProject")
 
 ```
 
-## Figure 3A
+## Figure 3A -- **UPDATE WITH FINAL VERSION**
 
 ```{r}
-setwd("~/Desktop/TSAS_test_analysis")
+setwd("~/Desktop/BCB546-Spring2021-FinalProject/Data")
 
-EssGenesAll <- read.delim("EssGenesAll_Merge.txt", header = TRUE, sep = "\t")
-
+EssGenesAll <- read.delim("EssGenesAll_Merge_TEST.txt", header = TRUE, sep = "\t")
 
 #Creating a new column to rename the groups 
 EssGenesAll <- mutate(EssGenesAll, Enrichment = Library) #creating a new column identical to "Library" 
@@ -83,8 +82,9 @@ ggplot(data = EssGenesAll, aes(x=start, y=TotalNumberReads.n, color = Enrichment
 ## Figure 3C
 
 ```{r}
-setwd("~/Desktop/BCB546_FinalProject") 
-TableS1A <- read.csv("TableS1A-edited.csv", header = TRUE)
+setwd("~/Desktop/BCB546-Spring2021-FinalProject/Data")
+
+TableS1A <- read.csv("TableS1A.csv", header = TRUE)
 TableS1A$Category.f <- as.factor(TableS1A$Category)
 TableS1A$Category.n <- as.numeric(TableS1A$Category)
 
