@@ -1,0 +1,163 @@
+---
+title: "05-ggplotFigures.Rmd"
+author: "Marissa Roghair Stroud"
+date: "4/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 05-ggplotFigures.Rmd
+
+Here is a summary of the code used to plot figures in R. Make sure to set the correct working directory before knitting together the document. You may also need to run `install.packages("scales")`. 
+
+```{r}
+library(tidyverse)
+library(scales)
+setwd("~/Desktop/BCB546_FinalProject")
+```
+
+### Update the `setwd()` directory before turning in the project!
+
+
+## Figure 2E
+
+```{r}
+
+```
+
+## Figure 2F
+
+```{r}
+
+```
+
+## Figure 3A
+
+```{r}
+setwd("~/Desktop/TSAS_test_analysis")
+
+EssGenesAll <- read.delim("EssGenesAll_Merge.txt", header = TRUE, sep = "\t")
+
+
+#Creating a new column to rename the groups 
+EssGenesAll <- mutate(EssGenesAll, Enrichment = Library) #creating a new column identical to "Library" 
+EssGenesAll$Enrichment[ EssGenesAll$Enrichment == "Ess538"] = "E3"  #Replace Ess538 with "E3"
+EssGenesAll$Enrichment[ EssGenesAll$Enrichment == "Ess539"] = "E2"  #Replace Ess539 with "E2"
+EssGenesAll$Enrichment[ EssGenesAll$Enrichment == "Ess540"] = "E1"  #Replace Ess540 with "E1"
+EssGenesAll$Enrichment[ EssGenesAll$Enrichment == "Ess541"] = "Library"  #Replace Ess541 with "Library"
+EssGenesAll$TotalNumberReads.n <- as.numeric(EssGenesAll$TotalNumberReads)
+
+#This command orders the 4 categories so that E3 will be first and the Library at the end
+EssGenesAll$Enrichment.f = factor(EssGenesAll$Enrichment, levels=c('E3','E2','E1','Library'))
+
+#Setting the maximum number of reads to 10 (just to facilitate plotting... some of these have >1000 reads and others only ~2)
+EssGenesAll$TotalNumberReads.n[EssGenesAll$TotalNumberReads.n > 10] <- 10
+
+#The plot with plenty of modifications to make it look more similar to the paper's
+ggplot(data = EssGenesAll, aes(x=start, y=TotalNumberReads.n, color = Enrichment.f)) + 
+  geom_line(mapping = aes(x=start, y=TotalNumberReads.n)) +
+  facet_grid(Enrichment.f ~ .) +   
+  scale_color_manual(values = c("E3" = "lightpink", "E2" = "lightblue", "E1" = "deeppink4", "Library" = "grey30")) + 
+  xlab('Position') + ylab('Number of Unique Hits') +
+  ggtitle("Graphical Depiction of Tn Insertions in MPAO1 Library and Enrichments") + 
+  theme(axis.text.x = element_text(size = 10, angle = 0, vjust = 1),
+        axis.text.y = element_text(size = 8), 
+        axis.title.y = element_text(size = 14), 
+        axis.title.x = element_text(size = 14),
+        panel.grid.major=element_blank(), panel.grid.minor=element_blank(),
+        plot.title = element_text(size =15, hjust = 0.5),
+        legend.position = "none", 
+        axis.line = element_line(colour = "grey20", 
+                                 size = 0.4, linetype = "solid"),
+        panel.background = element_rect(fill = "white",
+                                        colour = "white",
+                                        size = 0.5, linetype = "solid"),
+        panel.border = element_rect(colour = "black", fill=NA, size=0.7)) + 
+  scale_y_continuous(name="Number of Unique Hits", limits=c(0, 10), expand = c(0.01, 0),breaks=c(0, 5, 10)) +
+  scale_x_continuous(name="Position", limits=c(0, 6275467), labels = comma, expand = c(0.005, 0), breaks=c(0,1000000, 2000000, 3000000, 4000000, 5000000, 6000000))
+```
+
+## Figure 3C
+
+```{r}
+setwd("~/Desktop/BCB546_FinalProject") 
+TableS1A <- read.csv("TableS1A-edited.csv", header = TRUE)
+TableS1A$Category.f <- as.factor(TableS1A$Category)
+TableS1A$Category.n <- as.numeric(TableS1A$Category)
+
+
+CategoryCounts <- count(TableS1A, Category, wt = NULL, sort = FALSE, name = "count")
+ZeroCountCategories <- data.frame(c(6, 12, 14),
+                                  c(0, 0, 0))
+names(ZeroCountCategories) <- c("Category", "count")
+
+AllCategoryCounts <- rbind(CategoryCounts, ZeroCountCategories)
+AllCategoryCounts$Category.f <- as.factor(AllCategoryCounts$Category)
+AllCategoryCounts$Category.n <- as.numeric(AllCategoryCounts$Category)
+
+AllSorted <- AllCategoryCounts[order(AllCategoryCounts$Category.n),]
+
+#Renaming the categories from numbers into the name of the category
+AllSorted$Category[ AllSorted$Category.f == 1] = "Quorum Sensing"
+AllSorted$Category[ AllSorted$Category.f == 2] = "Adherence / Motility"
+AllSorted$Category[ AllSorted$Category.f == 3] = "Energy / Metabolism"
+AllSorted$Category[ AllSorted$Category.f == 4] = "Fe / Heme"
+AllSorted$Category[ AllSorted$Category.f == 5] = "DNA"
+AllSorted$Category[ AllSorted$Category.f == 6] = "RNA"
+AllSorted$Category[ AllSorted$Category.f == 7] = "Protein"
+AllSorted$Category[ AllSorted$Category.f == 8] = "Virulence"
+AllSorted$Category[ AllSorted$Category.f == 9] = "Transportation"
+AllSorted$Category[ AllSorted$Category.f == 10] = "Cellular Stress"
+AllSorted$Category[ AllSorted$Category.f == 11] = "Fatty Acids"
+AllSorted$Category[ AllSorted$Category.f == 12] = "Cell Wall / Envelope"
+AllSorted$Category[ AllSorted$Category.f == 13] = "Regulation / Signal Transduction"
+AllSorted$Category[ AllSorted$Category.f == 14] = "Phage"
+AllSorted$Category[ AllSorted$Category.f == 15] = "Polyamines"
+AllSorted$Category[ AllSorted$Category.f == 16] = "Unknown"
+
+
+#R's default is to sort alphabetically, but making a list of the order I want everything to be in will override that
+category_order <- c("Quorum Sensing", "Adherence / Motility", "Energy / Metabolism", 
+                    "Fe / Heme", "DNA", "RNA", "Protein", "Virulence", "Transportation",
+                    "Cellular Stress", "Fatty Acids", "Cell Wall / Envelope",
+                    "Regulation / Signal Transduction", "Phage", "Polyamines", "Unknown")
+
+#Figure3A in the paper color coded their bars by function. This list is each of these colors in the order the categories will be in
+color_order <- c("darkgreen", "grey20", "grey20", "chocolate4", "grey20", "grey20", "grey20", 
+                 "firebrick2", "grey20", "grey20", "grey20", "grey20", "grey20", "grey20", 
+                 "purple", "grey50")
+
+
+#The chunk of code that will form the final plot
+ggplot(data = AllSorted, aes(x=factor(Category, level = category_order), y=count)) + 
+         geom_col(mapping = aes(x=factor(Category, level = category_order), y=count), 
+                  fill=color_order)  + 
+                    ylab('Number of Genes') +
+         ggtitle("Functional Categorization of Tn Insertions in the Final E3 Dataset") + 
+         labs(fill = "") + 
+         scale_y_continuous(name="Number of Genes", limits=c(0, 50), expand = c(0, 0)) +
+         theme(axis.text.x = element_text(size = 13, angle = 50, hjust = 1, color=color_order),
+               axis.text.y = element_text(size = 12), 
+               axis.title.y = element_text(size = 12), 
+               axis.title.x = element_blank(),
+               plot.title = element_text(size =15, hjust = 0.5),
+               panel.background = element_rect(fill = "grey95",
+                                               colour = "grey95",
+                                               size = 0.5, linetype = "solid"),
+               panel.grid.major.y = element_line(size = 0.5, linetype = 'solid',
+                                               colour = "grey82"), 
+               panel.grid.minor.y = element_line(size = 0.25, linetype = 'solid',
+                                               colour = "grey85"),
+               panel.grid.major.x = element_line(size = 0.25, linetype = 'solid',
+                                                 colour = "grey85"),
+               panel.border = element_rect(colour = "black", fill=NA, size=0.7))
+
+# There's a warning that comes up when you run this plot, as I created a vector for coloring the text on the x-axis. If that causes problems in your version of R, delete "color=color_order" from the axis.test.x line and it should run just fine.
+```
+
+
+
+

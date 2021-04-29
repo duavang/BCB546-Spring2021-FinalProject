@@ -29,11 +29,11 @@ This directory contains the following:
 ## `Code` directory 
 This directory contains the commented code for the replication.
 
-* `FILENAME.md`: Downloading, inspecting, and describing the data utilized in the study. -- **NOT DONE**
-* `FILENAME.md`: Processing the data to format them for the analysis (trimming adapters). -- **NOT DONE**
-* `FILENAME.md`: Rerunning the analysis described in the manuscript using Bowtie2 and TSAS. -- **NOT DONE**
-* `FILENAME.md`: Processing the data to format them for plotting. -- **NOT DONE**
-* `FILENAME.Rmd`: Providing ggplot figures of the results. -- **NOT DONE**
+* `01-InitialDataStructure.md`: Downloading, inspecting, and describing the data utilized in the study. -- **NOT DONE**
+* `02-DataProcessing.md`: Processing the data to format them for the analysis. -- **NOT DONE**
+* `03-DataAnalysis.md`: Rerunning the analysis described in the manuscript using Bowtie2 and TSAS. -- **NOT DONE**
+* `04-ProcessingPart2.md`: Processing the data to format them for plotting with ggplot in R. -- **NOT DONE**
+* `05-ggplotFigures.Rmd`: Providing ggplot figures of the results. -- **NOT DONE**
 
 
 ---
