@@ -4,7 +4,7 @@ Group members: Ashenafi Beyi, Maggie Sodders, Marissa Roghair Stroud, and Dua Va
 
 Project completed in BCB 546 during the Spring 2021 semester. 
 
-Paper: **A High-Throughput Method for Identifying Novel Genes That Influence Metabolic Pathways Reveals New Iron and Heme Regulation in _Pseudomonas aeruginosa_**. David G. Glanville, Caroline Mullineaux-Sanders, Christopher J. Corcoran, Brian T. Burger, Saheed Imam, Timothy J. Donohue, Andrew T. Ulijasz. *mSystems* Feb 2021, 6 (1) e00933-20; DOI: 10.1128/mSystems.00933-20
+Paper: **A High-Throughput Method for Identifying Novel Genes That Influence Metabolic Pathways Reveals New Iron and Heme Regulation in _Pseudomonas aeruginosa_**. David G. Glanville, Caroline Mullineaux-Sanders, Christopher J. Corcoran, Brian T. Burger, Saheed Imam, Timothy J. Donohue, Andrew T. Ulijasz. *mSystems* Feb 2021, 6 (1) e00933-20; DOI: [10.1128/mSystems.00933-20](https://msystems.asm.org/content/6/1/e00933-20)
 
 --
 
@@ -70,13 +70,13 @@ _These tables need reformatted so they don't contain any extra columns/rows or e
 
 The following files have been modified from the original format they were downloaded as and sorted or organized for ease of use in figure creation. 
 
-##### Outputs from TSAS or PATRIC 
+#### Outputs from TSAS or PATRIC 
 
 * `wig` files -- **NOT DONE**
 * `essential gene` files -- **NOT DONE**
 * other outputs, PATRIC files, etc... -- **NOT DONE**
 
-##### Files created for plotting in ggplot
+#### Files created for plotting in ggplot
 
 * `MPAO1_feature_table_genes.txt`: Creation of this file is described in `FILENAME.md`.  -- **DONE**
 * `MPAO1_feature_table_abbrev.txt`: Creation of this file is also described in `FILENAME.md`. It only contains the gene name, start/end position, and the strand the gene lies on.  -- **DONE**
