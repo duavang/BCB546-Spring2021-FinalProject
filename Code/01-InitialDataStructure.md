@@ -9,7 +9,8 @@ Updated by Marissa on April 29, 2021.
 
 ### Downloading files
 
-I downloaded 4 files from the Sequence Read Archive on April 14, 2021: `SRR13258538`, `SRR13258539`, `SRR13258540`, `SRR13258541`. Using the `sra-toolkit` package downloaded from [NCBI on GitHub](https://github.com/ncbi/sra-tools/wiki), the files were converted into FASTQ format. 
+I downloaded 4 files from the Sequence Read Archive on April 14, 2021: `SRR13258538`, `SRR13258539`, `SRR13258540`, `SRR13258541`. Using the `sra-toolkit` package downloaded from [NCBI on GitHub](https://github.com/ncbi/sra-tools/wiki), the files were converted into FASTQ format.      
+
 
 
 ### General information about the files:
