@@ -40,14 +40,15 @@ This markdown file goes through the pipeline that our group used to analyze the 
 2. Git clone the TSAS git hub repo: [https://github.com/srimam/TSAS](https://github.com/srimam/TSAS)
 NOTE: Keep these files in the same folder you have your processed genome fasta and TnSeq data files. Use the latest version for these analyses. 
 
-3. Install bowtie2 from conda: 
+3.  Download the Reference Annotation GFF file (NCBI) 
 
-	```
-	$ conda install bowtie2
+	* To download the GFF file: 
+		* Follow the link to "Assembly" under "Related information" in the right-hand sidebar
+		* Click on the "Download Assembliy" button to open the download menu
+		* Select the "Source database" - GenBank 
+		* Download the necessary file
 	
-	```
-	
-## 2) Map Tn-Seq reads to Reference Genome 
+## 2) Map Tn-Seq reads to Indexed Reference Genome 
 1. Navigate to the folder for which you have saved your processed files after following steps from ```02-DataProcessing.md```. 
 	
 1. Run ```bowtie2``` to map your trimmed TnSeq reads to the indexed genome file : 
@@ -64,7 +65,7 @@ NOTE: Keep these files in the same folder you have your processed genome fasta a
 	
 ## 3) Run Tn-Seq Analysis Software (TSAS) V.3.1 on mapped reads for manipulation and statistical analyses
  
-1. Fill the "Parameters.txt" file located in the TSAS folder you cloned locally to your computer. Keep most at default. The manuscript ran a one sample analysis and changed the threshold of the number of hits to unique insertion site to **10.** We also changed the "results" from default "short" to "long." 
+1. Fill the "Parameters.txt" file located in the TSAS folder you cloned locally to your computer. Keep most at default parameters. The manuscript ran a one sample analysis and changed the threshold of the number of hits to unique insertion site to **10.** We also changed the "results" from default "short" to "long." 
 	
 	```
 	#####Input parameters example: 
