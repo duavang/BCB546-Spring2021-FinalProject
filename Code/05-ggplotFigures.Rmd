@@ -1,7 +1,7 @@
 ---
 title: "05-ggplotFigures.Rmd"
-author: "Marissa Roghair Stroud"
-date: "4/29/2021"
+author: "Asehnafi Beyi, Maggie Sodders, Marissa Roghair Stroud, and Dua Vang"
+date: "5/3/2021"
 output: html_document
 ---
 
@@ -25,6 +25,42 @@ setwd("~/Desktop/BCB546-Spring2021-FinalProject/Data")
 ## Figure 2E
 
 ```{r}
+setwd("~/Desktop/BCB546-Spring2021-FinalProject/Data")
+library("ggplot2")
+library("dplyr")
+UniqueInsertions <- read.delim("Fig2E_TSASResults.txt")
+
+#parses out first column with all rows
+df = UniqueInsertions[, c(2,4,5)]
+
+#divdes reads into thousands and adds the new df to the existing one
+
+df["X1000"] <- df$X/1000
+
+#Check dataframe
+df
+
+#plot using  ggplot2
+p <- ggplot(data=df, aes(x=Enrichment, y=X1000, group=Number, shape=Number, color=Number)) +
+  geom_point(aes(shape= Number), size=2) +
+  scale_shape_manual(values=c(16, 15)) + 
+  scale_color_manual(values=c("No. Of Unique Insertions"= "black", "No. Of Unique Insertions Within Genes" = "red")) +
+  geom_line(aes(color=Number))+
+  xlab('Enrichment') +
+  ylab('Unique Insertions (thousands)') + 
+  ylim(0, 5) + 
+  theme(legend.title = element_blank()) +
+  annotate(geom="text", x=0, y=2.8, label="80",
+           color="black") + 
+  annotate(geom="text", x=1, y=1.9, label="82",
+         color="black") + 
+  annotate(geom="text", x=2, y=1.0, label="87",
+           color="black") + 
+  annotate(geom="text", x=3, y=0.8, label="88",
+           color="black") + 
+  theme_bw()
+
+p
 
 ```
 
