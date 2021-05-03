@@ -82,3 +82,4 @@ The following files have been modified from the original format they were downlo
 * `MPAO1_feature_table_abbrev.txt`: Creation of this file is also described in `FILENAME.md`. It only contains the gene name, start/end position, and the strand the gene lies on.  -- **DONE**
 * `EssGenesAll_Merge.txt`: This is the final file uploaded into Rmd file `FILENAME` for plotting. -- **DONE**
 * `Fig2E_TSASResults.txt`: This is the txt file containing the numbers of unique insertions and the numbers of unique insertions within genes used in order to plot Figure 2E. --**DONE**
+* '2F TSAS Data.csv': .csv file containing the numbers of mapped reads and unique insertions from random samplings of SRR13258540.fastq in order to plot Figure 2F --**DONE**
