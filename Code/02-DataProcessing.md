@@ -73,7 +73,7 @@ This markdown explains the pipeline in which we used to process the reference ge
 3. Trim your reads using ```trimgalore```: 
 
 	```
-	$ trim_galore --length 40 SRR13258538.fastq
+	$ trim_galore --length 20 --phred20 SRR13258538.fastq
 	
 	```
 	
