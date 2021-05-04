@@ -23,7 +23,7 @@ This directory contains the following:
 
 * An `author(s)-YEAR.md` file that introduces the original paper, explains the technical details of your replication of analyses and summarizes your replication of the original results. -- **NOT DONE**
 * `Glanville_et_al_2021.pdf`: The study whose analysis we replicated. -- **DONE**
-* `Figure2E.png`, `Figure2F.png`, `Figure3A.png`, `Figure3B.png`, and `Figure3C.png`: ggplot figures, with names corresponding to the figure that was reproduced. -- **NOT DONE**
+* `Figure2E.png`, `Figure2F.png`, `Figure3A.png`, and `Figure3C.png`: ggplot figures, with names corresponding to the figure that was reproduced. -- **DONE**
 
 ---
 ## `Code` directory 
@@ -74,7 +74,6 @@ The following files have been modified from the original format they were downlo
 
 * `wig` files: These files can be opened on a genoms browser application to view the number of mapped reads per base pair for the entire genome. **DONE**
 * `essential gene` files: These files contains a list of all annotated genes in the genome along with all the statistics calculated for each gene from the data provided for a one-sample analysis **DONE**
-* other outputs, PATRIC files, etc... -- **NOT DONE**
 
 #### Files created for plotting in ggplot
 
