@@ -66,7 +66,7 @@ These 4 files need unzipped before proceeding with the analysis.
 
 The following files have been modified from the original format they were downloaded as and sorted or organized for ease of use in figure creation. 
 
-#### Outputs from TSAS or PATRIC 
+#### Outputs from TSAS
 
 * `wig` files: These files can be opened on a genoms browser application to view the number of mapped reads per base pair for the entire genome. 
 * `essential gene` files: These files contains a list of all annotated genes in the genome along with all the statistics calculated for each gene from the data provided for a one-sample analysis 
@@ -75,6 +75,7 @@ The following files have been modified from the original format they were downlo
 
 * `MPAO1_feature_table_genes.txt`: Creation of this file is described in `04-ProcessingPart2.md`.  
 * `MPAO1_feature_table_abbrev.txt`: Creation of this file is also described in `04-ProcessingPart2.md`. It only contains the gene name, start/end position, and the strand the gene lies on. 
+* `Ess538`, `Ess539`, `Ess540`, `Ess541`: Essential gene files, outputs from TSAS to be used for plotting in R.
 * `EssGenesAll_Merge.txt`: This is the final file uploaded into Rmd file `05-ggplotFigures.Rmd` for plotting.
 * `Fig2E_TSASResults.txt`: This is the txt file containing the numbers of unique insertions and the numbers of unique insertions within genes used in order to plot Figure 2E. 
 * `2F TSAS Data.csv`: .csv file containing the numbers of mapped reads and unique insertions from random samplings of SRR13258540.fastq in order to plot Figure 2F. 
