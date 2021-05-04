@@ -56,7 +56,7 @@ I downloaded 4 files from the Sequence Read Archive on April 14, 2021: `SRR13258
 	128M	SRR13258541.fastq
 
 ### Number of rows of data 
-There are 4 rows of data per entry. Each entry starts with @FILENAME, so counting this for each file gives an accurate number of entries. This is the same value as the number of lines divided by four.
+There are 4 rows of data per entry. Each entry starts with @FILENAME, so counting this for each file gives an accurate number of entries. This is equal to the number of lines divided by four.
 
 	grep "^@SRR13258538" SRR13258538.fastq | wc -l		817759
 	grep "^@SRR13258539" SRR13258539.fastq | wc -l 		944556
