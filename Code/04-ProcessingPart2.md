@@ -58,6 +58,7 @@ The next set of commands adds the file name to the last column of each of the fi
 ```
 for file in Ess5*; do awk 'BEGIN{OFS="\t"}{print $0, FILENAME}' 
 	$file; done > EssGenesAll.txt
+	
 head -n 1 EssGenesAll.txt > EssGenesAll_clean.txt
 sed "s/Ess538/Library/" EssGenesAll_clean.txt > EssGenesAll_clean2.txt
 grep MPAO1 EssGenesAll.txt | sort -k1,1 >> EssGenesAll_clean2.txt 

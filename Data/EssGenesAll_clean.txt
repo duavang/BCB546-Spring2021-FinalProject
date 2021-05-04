@@ -1,0 +1,1 @@
+Gene_ID	Annotation	Gene length (bp)	No. of Unique hits	Normalize Unique hits (hits/bp)	Total number of reads	Pvalue (Essential)	Adj. Pvalue (Essential)	FWER (Essential)	Pvalue (Improved fitness)	Adj. Pvalue (Improved fitness)	FWER (Improved fitness)	Ess538
