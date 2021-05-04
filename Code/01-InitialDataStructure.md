@@ -4,6 +4,18 @@ Downloading, inspecting, and describing the data utilized in the study.
 
 Updated by Marissa on April 29, 2021.
 
+## Software & Packages used in this study
+
+* sra-toolkit (LINK)
+* trim_galore (LINK)
+* bowtie2 (LINK)
+* TSAS (LINK)
+* MochiView?? (LINK)
+* R (LINK)
+* R studio (LINK)
+* 	ggplot??? others?
+
+
 
 ## Sequence Read Archive (SRA) files
 
@@ -44,12 +56,12 @@ I downloaded 4 files from the Sequence Read Archive on April 14, 2021: `SRR13258
 	128M	SRR13258541.fastq
 
 ### Number of rows of data 
-There are 2 rows of data per entry. Each entry contains the word "length" one time, so counting this gives an accurate number of entries. This is the same value as the number of lines divided by two.
+There are 4 rows of data per entry. Each entry starts with @FILENAME, so counting this for each file gives an accurate number of entries. This is the same value as the number of lines divided by four.
 
-	grep length SRR13258538.fastq | wc -l 		1635518
-	grep length SRR13258539.fastq | wc -l 		1889112
-	grep length SRR13258540.fastq | wc -l 		1705162
-	grep length SRR13258541.fastq | wc -l 		1346240
+	grep "^@SRR13258538" SRR13258538.fastq | wc -l		817759
+	grep "^@SRR13258539" SRR13258539.fastq | wc -l 		944556
+	grep "^@SRR13258540" SRR13258540.fastq | wc -l 		852581
+	grep "^@SRR13258541" SRR13258541.fastq | wc -l 		673120
 	
 	
 ## *Pseudomonas aeruginosa* MPAO1 genome & annoation files
