@@ -72,8 +72,8 @@ The following files have been modified from the original format they were downlo
 
 #### Outputs from TSAS or PATRIC 
 
-* `wig` files -- **NOT DONE**
-* `essential gene` files -- **NOT DONE**
+* `wig` files: These files can be opened on a genoms browser application to view the number of mapped reads per base pair for the entire genome. **DONE**
+* `essential gene` files: These files contains a list of all annotated genes in the genome along with all the statistics calculated for each gene from the data provided for a one-sample analysis **DONE**
 * other outputs, PATRIC files, etc... -- **NOT DONE**
 
 #### Files created for plotting in ggplot
