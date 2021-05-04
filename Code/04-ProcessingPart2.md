@@ -71,7 +71,6 @@ TSAS code doesn't include position information about the genes for plotting purp
 ```
 join -1 1 -2 1 -t "$(printf '\t')" MPAO1_feature_table_abbrev.txt 
 	EssGenesAll_clean2.txt > EssGenesAll_Merge.txt
-	
 ```
 
 This file will be imported into R for plotting with ggplot in the file `05-ggplotFigures.Rmd`.
