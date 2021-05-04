@@ -58,6 +58,7 @@ The next set of commands adds the file name to the last column of each of the fi
 ```
 for file in Ess5*; do awk 'BEGIN{OFS="\t"}{print $0, FILENAME}' 
 	$file; done > EssGenesAll.txt
+	
 head -n 1 EssGenesAll.txt > EssGenesAll_clean.txt
 sed "s/Ess538/Library/" EssGenesAll_clean.txt > EssGenesAll_clean2.txt
 grep MPAO1 EssGenesAll.txt | sort -k1,1 >> EssGenesAll_clean2.txt 
@@ -70,6 +71,7 @@ TSAS code doesn't include position information about the genes for plotting purp
 ```
 join -1 1 -2 1 -t "$(printf '\t')" MPAO1_feature_table_abbrev.txt 
 	EssGenesAll_clean2.txt > EssGenesAll_Merge.txt
+	
 ```
 
 This file will be imported into R for plotting with ggplot in the file `05-ggplotFigures.Rmd`.
