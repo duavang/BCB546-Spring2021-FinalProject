@@ -51,7 +51,6 @@ p <- ggplot(data=df, aes(x=Enrichment, y=X1000, group=Number, shape=Number, colo
   xlab('Enrichment') +
   ylab('Unique Insertions (thousands)') + 
   ylim(0, 5) + 
-  theme(legend.title = element_blank()) +
   annotate(geom="text", x=0, y=2.8, label="80",
            color="black") + 
   annotate(geom="text", x=1, y=1.9, label="82",
@@ -60,7 +59,7 @@ p <- ggplot(data=df, aes(x=Enrichment, y=X1000, group=Number, shape=Number, colo
            color="black") + 
   annotate(geom="text", x=3, y=0.8, label="88",
            color="black") + 
-  theme_bw()
+  theme_bw() +theme(legend.title = element_blank()) 
 
 p
 
