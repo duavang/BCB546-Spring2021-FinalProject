@@ -6,16 +6,11 @@ Project completed in BCB 546 during the Spring 2021 semester.
 
 Paper: **A High-Throughput Method for Identifying Novel Genes That Influence Metabolic Pathways Reveals New Iron and Heme Regulation in _Pseudomonas aeruginosa_**. David G. Glanville, Caroline Mullineaux-Sanders, Christopher J. Corcoran, Brian T. Burger, Saheed Imam, Timothy J. Donohue, Andrew T. Ulijasz. *mSystems* Feb 2021, 6 (1) e00933-20; DOI: [10.1128/mSystems.00933-20](https://msystems.asm.org/content/6/1/e00933-20)
 
---
+---
 
 This document describes the organization of our GitHub repository and the files found within it. Additional details about each part of the analysis are listed next to the relevant files. 
 
-
-_Note: To make organization of our "final" repository easier, I've placed text next to each file we need to upload with the words **DONE** or **NOT DONE**. Once all files are present in our GitHub repository, the text and this note can be deleted. - Marissa_
-
 ---
-
-
 
 ## Main Folder
 
@@ -29,7 +24,7 @@ This directory contains the following:
 ## `Code` directory 
 This directory contains the commented code for the replication.
 
-* `01-InitialDataStructure.md`: Downloading, inspecting, and describing the data utilized in the study. -- **NOT DONE**
+* `01-InitialDataStructure.md`: Downloading, inspecting, and describing the data utilized in the study. Also contains links to the packages used for analysis. 
 * `02-DataProcessing.md`: Processing the data to format them for the analysis. 
 * `03-DataAnalysis.md`: Rerunning the analysis described in the manuscript using Bowtie2 and TSAS. 
 * `04-ProcessingPart2.md`: Processing the data to format them for plotting with ggplot in R. 
