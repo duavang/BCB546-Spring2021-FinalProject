@@ -21,7 +21,7 @@ _Note: To make organization of our "final" repository easier, I've placed text n
 
 This directory contains the following:
 
-* An `author(s)-YEAR.md` file that introduces the original paper, explains the technical details of your replication of analyses and summarizes your replication of the original results. -- **NOT DONE**
+* An `author(s)-YEAR.md` file that introduces the original paper, explains the technical details of your replication of analyses and summarizes your replication of the original results. 
 * `Glanville_et_al_2021.pdf`: The study whose analysis we replicated. 
 * `Figure2E.png`, `Figure2F.png`, `Figure3A.png`, and `Figure3C.png`: ggplot figures, with names corresponding to the figure that was reproduced. 
 
